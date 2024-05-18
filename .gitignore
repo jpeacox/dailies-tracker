@@ -3,3 +3,4 @@
 **/dist/
 app.db
 package.json.md5
+.DS_store

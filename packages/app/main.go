@@ -3,7 +3,6 @@ package main
 import (
 	"embed"
 
-	"github.com/spf13/viper"
 	"github.com/wailsapp/wails/v2"
 	"github.com/wailsapp/wails/v2/pkg/options"
 	"github.com/wailsapp/wails/v2/pkg/options/assetserver"
@@ -22,14 +21,7 @@ type Config struct {
 func main() {
 	var err error
 
-	var config Config
-
-	err = viper.Unmarshal(&config)
-	if err != nil {
-		println("Error reading config:", err.Error())
-	}
-
-	app := NewApp(&config)
+	app := NewApp()
 
 	rewardService := &RewardService{}
 	commissionService := &CommissionService{
